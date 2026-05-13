@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements an end-to-end test suite using a data-driven approach. Test cases are defined in JSON and executed dynamically to reduce duplication and improve scalability.
+This project implements an end-to-end test suite for a project board web app using a data-driven approach. Test cases are defined in JSON and executed dynamically to reduce duplication and improve scalability.
 
 The tests validate task management functionality across different application views (e.g. Web and Mobile).
 
@@ -17,19 +17,14 @@ To work with this structure, I used role-based selectors where possible and text
 ---
 
 ## Project Structure
-
+```
 pages/
-
     LoginPage.ts
-
     BoardPage.ts
-
 tests/
-
     task-board.spec.ts
-
     testData.json
-
+```
 ---
 
 ## How It Works
