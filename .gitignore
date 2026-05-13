@@ -1,0 +1,16 @@
+.vscode/
+dist/
+build/
+node_modules/
+
+.env
+.env.*
+
+npm-debug.log*
+.DS_Store
+
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
