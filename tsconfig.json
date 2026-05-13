@@ -3,10 +3,12 @@
         "lib": ["ESNext", "dom"],
         "outDir": "lib",
         "target": "ES6",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
         "moduleResolution": "Node16",
         "module": "Node16",
         "types": ["node"]
     },
-    "include": ["./**/*.ts"],
+    "include": ["./**/*.ts", "./**/*.json"],
     "exclude": ["node_modules/**/*"]
 }
