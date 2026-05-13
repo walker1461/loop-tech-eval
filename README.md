@@ -19,12 +19,16 @@ To work with this structure, I used role-based selectors where possible and text
 ## Project Structure
 
 pages/
-LoginPage.ts
-BoardPage.ts
+
+    LoginPage.ts
+
+    BoardPage.ts
 
 tests/
-task-board.spec.ts
-testData.json
+
+    task-board.spec.ts
+
+    testData.json
 
 ---
 
