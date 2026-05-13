@@ -1,11 +1,22 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
+import { LoginPage } from "../pages/LoginPage";
+import { BoardPage } from "../pages/BoardPage";
+import testData from "../tests/testData.json";
 
-test("login", async ({ page }) => {
-    await page.goto("https://animated-gingersnap-8cf7f2.netlify.app/");
-    await page.getByRole("textbox", { name: "Username" }).click();
-    await page.getByRole("textbox", { name: "Username" }).fill("admin");
-    await page.getByRole("textbox", { name: "Password" }).click();
-    await page.getByRole("textbox", { name: "Password" }).fill("password123");
-    await page.getByRole("button", { name: "Sign in" }).click();
-    await expect(page.getByText("Projects"));
+test.describe("Task board tests", () => {
+    test.beforeEach(async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.goto();
+        await loginPage.login("admin", "password123");
+    });
+
+    for (const testCase of testData) {
+        test(testCase.name, async ({ page }) => {
+            const dashboard = new BoardPage(page);
+
+            await dashboard.navigateToApp(testCase.application);
+            await dashboard.verifyTaskInColumn(testCase.task, testCase.column);
+            await dashboard.verifyTaskTags(testCase.task, testCase.tags);
+        });
+    }
 });
