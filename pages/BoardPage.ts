@@ -14,7 +14,7 @@ export class BoardPage {
     private getColumn(columnName: string): Locator {
         return this.page
             .getByRole("heading", {
-                name: new RegExp(`${columnName}`),
+                name: new RegExp(`^${columnName}`),
                 level: 2,
             })
             .locator("xpath=..");
